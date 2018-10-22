@@ -1,0 +1,3 @@
+S:aSa|bA
+A:aS|bB
+B:bB|b
