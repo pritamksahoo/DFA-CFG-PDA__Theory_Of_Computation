@@ -30,6 +30,22 @@ def print_the_cfg():
 		print()
 
 
+def remove_non_generating_production():
+	'''If the cfg has some non-generating symbol, then remove it'''
+	non_generating_symbol = (set(terminals_for_cfg.values())).difference(set(all_production_cfg.keys()))
+	# print(non_generating_symbol)
+	for key in all_production_cfg.keys():
+		rhs = all_production_cfg[key]
+		delete_rhs = []
+		for el in rhs:
+			if len(non_generating_symbol.intersection(set(el))) != 0:
+				delete_rhs.append(el)
+
+		for el in delete_rhs:
+			rhs.remove(el)
+
+		all_production_cfg[key] = rhs
+
 
 def add_to_production(l):
 	'''Storing a single production to the collection of production'''
@@ -136,6 +152,9 @@ if __name__ == "__main__":
 	# Creating S-productions
 	generate_start_state_production(states, stack_symbols)
 
+	# Removing non-generating production
+	remove_non_generating_production()
+
 	# Printing the pda
 	print("Converted to CFG : \n-------------------------")
 	print_the_cfg()
@@ -145,9 +164,10 @@ if __name__ == "__main__":
 	f = open("After_pda_to_cfg_sample_files/pda_to_cfg@"+filename+"@.txt",'w')
 	f.write(str(all_production_cfg))
 	f.close()
-
+	
 	# Read back from the file
 	# f = open("After_pda_to_cfg_sample_files/pda_to_cfg@"+filename+"@.txt",'r')
 	# data=f.read()
 	# f.close()
 	# pda_dict = eval(data)
+	# print(all_production_cfg)
