@@ -24,6 +24,7 @@ B:bB|b
 ```
 δ(q0, a, a) -> ε
 ```
+* Productions have been stored in a **Python Dictionary** as a key-value pair, where key is l.h.s. of the production and the value contains all the r.h.s productions.
 * Converted **pda** will be stored in a text file in **After_cfg_to_pda_sample_files** folder, from where it can be retrieved for further use.
 #### Output
 ```
