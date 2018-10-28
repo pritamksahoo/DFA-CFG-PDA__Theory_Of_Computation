@@ -1,6 +1,6 @@
 # DFA-CFG-PDA
 
-## grammar_2_pda.py
+## 1) grammar_2_pda.py
 > A program written in **python** to convert a **Context Free Grammar** to a **Push Down Automata**.
 #### Input Pattern ( from some 'file.txt' in 'cfg_sample_files' folder )
 ```
@@ -33,4 +33,4 @@ B:bB|b
 δ(q,b,b) -> {(q,ε)}
 ```
 > <hr>
-## pda_2_grammar.py
+## 2) pda_2_grammar.py
