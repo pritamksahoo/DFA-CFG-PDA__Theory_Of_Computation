@@ -8,6 +8,6 @@ S:aSa|bA
 A:aS|bB
 B:bB|b
 ```
-> S - Start State
-> A, B - Non-Terminals
-> a, b - Terminals
+> S - Start State <br>
+> A, B - Non-Terminals <br>
+> a, b - Terminals <br>
