@@ -105,3 +105,8 @@ F:0B
 H:1
 ```
 > Converted **CFG** will stored in a text file in **After_pda_to_cfg_sample_files** folder, from where it can be restored for further use.
+## 3) dfa_2_mindfa.cpp
+> A program written in **c++** to convert a **DFA** to a **Min-State DFA**.
+```
+Algorithm used : Table-Filling Algorithm
+```
