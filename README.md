@@ -32,5 +32,5 @@ B:bB|b
 δ(q,a,a) -> {(q,ε)}
 δ(q,b,b) -> {(q,ε)}
 ```
-<br>
+
 ### pda_2_grammar.py
