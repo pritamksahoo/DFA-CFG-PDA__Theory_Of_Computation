@@ -55,7 +55,7 @@ q0,Z
 > Z, X - Stack Symbols <br>
 > Z - Stack Base Symbol <br>
 > q0 - Start State <br>
-> a, b - Terminals <br>
+> 0, 1 - Terminals <br>
 #### Points to Note
 * If there are **k** states and **m** stack symbols, then the corresponding **CFG** will have **mk<sup>2</sup>+1** states including **S**, the Start State of the CFG. Rest of the states will look like - 
 ```
@@ -67,7 +67,7 @@ q0,Z
 > Next, for the rest of the lines ( **Transition Function** ), perform the following steps - 
 * If it is a **non-erasing** production ( producing something except **epsilon** ), in the form - 
 ```
-δ(q',a,Y)=(q",X1X2X3...Xn), where q', q" are states; a is Terminal; and Y,X1,X2,...,Xn are Stack-symbols.
+δ(q',a,Y) = (q",X1X2X3...Xn), where q', q" are states; a is Terminal; and Y,X1,X2,...,Xn are Stack-symbols.
 ```
 * Then it will lead into a number of productions, in the following pattern - 
 ```
@@ -81,4 +81,26 @@ q0,Z
 * Then, it will lead to the following production - 
 ```
 [q' Y q"] -> a
+```
+* Now, there will be Start State Production for the CFG, in the form - 
+```
+S -> [q0 Z q]; where q0 - Start State of the pda, Z - Base Stack-symbol, and q - any Valid State of the pda.
+```
+* To store all these productions, **Python Dictionary** has been used.
+* After generating all possible productions, all the states enclosed in **[ ]** brackets will be mapped into there **unique non-terminal symbols**.
+* Next and final job is to cluster those productions in a well-defined form. Productions generated from same state will be together.
+### Output
+```
+python3 pda_2_grammar.py
+```
+> In the above input, **2x2<sup>2</sup>+1 = 9** states will be there; and say they are mapped into **A, B, C,..., H, and S**. Then the output will be - 
+```
+S:A|B
+A:1CA|1DE|ε
+B:1CB|1DF
+C:1CC
+D:1CD|1DH|0H
+E:0A
+F:0B
+H:1
 ```
