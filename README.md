@@ -20,7 +20,7 @@ B:bB|b
 δ(q0, ε, X) -> {(q0, y1), (q0, y2), ..., (q0, yn)}
 ```
 * In each production, there may be **Terminal** variables, detecting them will not be difficult, because they are written in **lower-case alphabets**, where the Non-terminals are not.
-* After all the conversions are over, one more transition function will be created for each Terminal a, in the form - 
+* After all the conversions are over, one more transition function will be created for each Terminal **a**, in the form - 
 ```
 δ(q0, a, a) -> ε
 ```
@@ -32,3 +32,5 @@ B:bB|b
 δ(q,a,a) -> {(q,ε)}
 δ(q,b,b) -> {(q,ε)}
 ```
+<br>
+### pda_2_grammar.py
