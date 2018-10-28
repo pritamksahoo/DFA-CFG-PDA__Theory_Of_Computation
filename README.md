@@ -24,6 +24,7 @@ B:bB|b
 ```
 δ(q0, a, a) -> ε
 ```
+* Converted **pda** will be stored in a text file in **After_cfg_to_pda_sample_files** folder, from where it can be retrieved for further use.
 #### Output
 > In the above example, a and b are terminals. So, the converted **pda** will look like - 
 ```
@@ -34,3 +35,14 @@ B:bB|b
 ```
 > <hr>
 ## 2) pda_2_grammar.py
+> A program written in **python** to convert a **Push Down Automata** to a **Context Free Grammar**.
+#### Input Pattern ( from some 'file.txt' in 'pda_sample_files' folder )
+```
+S:aSa|bA
+A:aS|bB
+B:bB|b
+```
+> S - Start State <br>
+> A, B - Non-Terminals <br>
+> a, b - Terminals <br>
+#### Steps to Solve
