@@ -53,5 +53,20 @@ q0,Z
 ```
 > q0, q1 - Valid States <br>
 > Z, X - Stack Symbols <br>
+> Z - Stack Base Symbol <br>
+> q0 - Start State <br>
 > a, b - Terminals <br>
+#### Points to Note
+* If there are **k** states and **m** stack symbols, then the corresponding **CFG** will have **mk<sup>2</sup>+1** states including **S**, the Start State of the CFG. Rest of the states will look like - 
+```
+[q Y q'], where q,q' - Combination of all valid States, and Y - all the Stack Symbols.
+```
+* And, all the **mk<sup>2</sup>** states will be mapped into **unique** **Non-Terminals** for the corresponding CFG.
 #### Steps to Solve
+* Extract the Valid States, Stack Symbols, and Terminal variables from the first three lines.
+> Next, for the rest of the lines ( **Transition Function** ), perform the following steps - 
+* If it is a **non-erasing** production ( producing something except **epsilon** ), in the form - 
+```
+δ(q',a,Y)=(q",X1X2X3...Xn), where q', q" are states; a is Terminal; and Y,X1,X2,...,Xn are Stack-symbols.
+```
+* Then the 
