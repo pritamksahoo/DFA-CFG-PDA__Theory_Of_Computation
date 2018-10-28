@@ -73,7 +73,7 @@ q0,Z
 ```
 [q' Y q] -> a[q" X1 q1][q1 X2 q2][q2 X3 q3]...[qn Xn q]; where q,q1,q2,...,qn can be any valid states.
 ```
-> For this, we might have to create a **n-nested for-loop** to generate all the productions.
+> For this, we might have to create a **n-nested for-loop ( by recursion )** to generate all the productions.
 * If the production is a **erasing** one, i.e., in the form -
 ```
 δ(q',a,Y)=(q",ε)
