@@ -86,9 +86,9 @@ q0,Z
 ```
 S -> [q0 Z q]; where q0 - Start State of the pda, Z - Base Stack-symbol, and q - any Valid State of the pda.
 ```
-* To store all these productions, **Python Dictionary** has been used.
+* To store all these productions, **Python Dictionary ( Key-value pair )** has been used.
 * After generating all possible productions, all the states enclosed in **[ ]** brackets will be mapped into there **unique non-terminal symbols**.
-* Next and final job is to cluster those productions in a well-defined form. Productions generated from same state will be together.
+* Next and final job is to cluster those productions in a well-defined form. Productions generated from same state will be together (will have same key in the dictionary).
 ### Output
 ```
 python3 pda_2_grammar.py
@@ -110,3 +110,10 @@ H:1
 ```
 Algorithm used : Table-Filling Algorithm
 ```
+#### Steps to Solve
+* Create a table for all pairs of states (Qi, Qj). For this a matrix of size (NxN) is created, where N is number of states. Initially all are marked false.
+* Consider every state pair **(Qi,Qj)**, where **Qi ∈ F** and **Qj ∉ F** ( F : Final State ) and mark them as true **( Distinguishable )** .
+* If there is an unmarked pair (Qi, Qj), mark it if the pair {δ (Qi, A), δ (Qj, A)} is marked for some input alphabet and keep repeating this process until anymore states can't be marked.
+* After that, combine all the unmarked pairs (Qi,Qj) and treat them as indistinguishable. They are treated as a single state in the reduced DFA.
+> when (Qi,Qj) is indistinguishable and (Qj,Qk), (Qk,Qj) are also indistinguishable; then, a single state consisting of (Qi,Qj,Qk) is formed in the minimal DFA.
+* For all distinguishable states, we allocate a state in the minimal DFA and finally display it.
