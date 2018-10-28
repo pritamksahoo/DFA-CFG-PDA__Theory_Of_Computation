@@ -69,4 +69,8 @@ q0,Z
 ```
 δ(q',a,Y)=(q",X1X2X3...Xn), where q', q" are states; a is Terminal; and Y,X1,X2,...,Xn are Stack-symbols.
 ```
-* Then the 
+* Then it will lead into a number of productions, in the following pattern - 
+```
+[q' Y q] -> a[q" X1 q1][q1 X2 q2][q2 X3 q3]...[qn Xn q];
+where q,q1,q2,...,qn can be any valid states.
+```
