@@ -104,3 +104,4 @@ E:0A
 F:0B
 H:1
 ```
+> Converted **CFG** will stored in a text file in **After_pda_to_cfg_sample_files** folder, from where it can be restored for further use.
