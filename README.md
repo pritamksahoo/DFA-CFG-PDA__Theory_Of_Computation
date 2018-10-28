@@ -38,11 +38,17 @@ B:bB|b
 > A program written in **python** to convert a **Push Down Automata** to a **Context Free Grammar**.
 #### Input Pattern ( from some 'file.txt' in 'pda_sample_files' folder )
 ```
-S:aSa|bA
-A:aS|bB
-B:bB|b
+q0,q1
+Z,X
+q0,Z
+δ(q0,1,Z)=(q0,XZ)
+δ(q0,1,X)=(q0,XX)
+δ(q0,0,X)=(q1,X)
+δ(q0,ε,Z)=(q0,ε)
+δ(q1,1,X)=(q1,ε)
+δ(q1,0,Z)=(q0,Z)
 ```
-> S - Start State <br>
-> A, B - Non-Terminals <br>
+> q0, q1 - Valid States <br>
+> Z, X - Stack Symbols <br>
 > a, b - Terminals <br>
 #### Steps to Solve
