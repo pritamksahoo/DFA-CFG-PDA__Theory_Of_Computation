@@ -26,6 +26,9 @@ B:bB|b
 ```
 * Converted **pda** will be stored in a text file in **After_cfg_to_pda_sample_files** folder, from where it can be retrieved for further use.
 #### Output
+```
+python3 grammar_2_pda.py
+```
 > In the above example, a and b are terminals. So, the converted **pda** will look like - 
 ```
 δ(q,ε,S) -> {(q,aAA)}
